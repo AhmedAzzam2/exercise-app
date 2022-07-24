@@ -1,0 +1,217 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class="user" style="display: flex; align-items: center;">
+  <img src="{{usr.profile.image.url}}" style='width: 77px; height: 77px; border-radius: 50%;'>
+  <div class="user-header">
+    <h1>{{ usr }}</h1>
+  </div>
+  
+</div>
+
+<style>
+  .card-body .fa,
+  .card-body .fas {
+    border-radius: 1rem;
+    padding: 8px;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+</style>
+
+<div class="carrds"> 
+  {% for cat in Category %}
+  <div class="carrd"> 
+    <img src="{{ cat.image.url}}" width="111" alt="">
+    <h5 style="
+    position: absolute;
+    background: #f0ffffd1;
+    padding: 6px;
+    left: -12px;
+    border-right: outset 7px;
+    border-radius: 19px;
+    box-shadow: 0 0 79px;">
+    {{ cat.name }}</h5>
+    <h6 class="flex">
+      <svg height="22" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <path d="M356.174,105.739H155.826c-27.668,0.01-50.077,22.417-50.087,50.087v200.348c0.01,27.668,22.419,50.075,50.087,50.085 h200.348c27.668-0.01,50.077-22.417,50.087-50.085V155.826C406.251,128.156,383.842,105.749,356.174,105.739z M322.783,272.696 H256c-4.396,0-8.696-1.781-11.806-4.892c-3.109-3.108-4.89-7.407-4.89-11.804v-66.783c0-9.223,7.475-16.696,16.696-16.696 s16.696,7.473,16.696,16.696v50.087h50.087c9.22,0,16.696,7.473,16.696,16.696C339.478,265.22,332.003,272.696,322.783,272.696z" /> </g> </g> <g> <g> <path d="M338.622,11.415C336.342,4.573,329.993,0,322.783,0H189.217c-7.21,0-13.559,4.573-15.84,11.415l-18.456,60.932h202.158 L338.622,11.415z"/> </g> </g> <g> <g> <path d="M154.923,439.652l18.454,60.93c2.281,6.842,8.629,11.418,15.84,11.418h133.565c7.21,0,13.559-4.578,15.84-11.418 l18.454-60.93H154.923z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+    <span>{{ cat.countday }} hour in day</span>  
+    </h6>
+    <h6 class="flex">
+      <svg height="22" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <path d="M356.174,105.739H155.826c-27.668,0.01-50.077,22.417-50.087,50.087v200.348c0.01,27.668,22.419,50.075,50.087,50.085 h200.348c27.668-0.01,50.077-22.417,50.087-50.085V155.826C406.251,128.156,383.842,105.749,356.174,105.739z M322.783,272.696 H256c-4.396,0-8.696-1.781-11.806-4.892c-3.109-3.108-4.89-7.407-4.89-11.804v-66.783c0-9.223,7.475-16.696,16.696-16.696 s16.696,7.473,16.696,16.696v50.087h50.087c9.22,0,16.696,7.473,16.696,16.696C339.478,265.22,332.003,272.696,322.783,272.696z" /> </g> </g> <g> <g> <path d="M338.622,11.415C336.342,4.573,329.993,0,322.783,0H189.217c-7.21,0-13.559,4.573-15.84,11.415l-18.456,60.932h202.158 L338.622,11.415z"/> </ g> </g> <g> <g> <path d="M154.923,439.652l18.454,60.93c2.281,6.842,8.629,11.418,15.84,11.418h133.565c7.21,0,13.559-4.578,15.84-11.418 l18.454-60.93H154.923z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+    <span>{{ cat.countmonth }} hour in month</span>
+    </h6>
+    <h6 class="flex">
+      <svg height="22" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <path d="M356.174,105.739H155.826c-27.668,0.01-50.077,22.417-50.087,50.087v200.348c0.01,27.668,22.419,50.075,50.087,50.085 h200.348c27.668-0.01,50.077-22.417,50.087-50.085V155.826C406.251,128.156,383.842,105.749,356.174,105.739z M322.783,272.696 H256c-4.396,0-8.696-1.781-11.806-4.892c-3.109-3.108-4.89-7.407-4.89-11.804v-66.783c0-9.223,7.475-16.696,16.696-16.696 s16.696,7.473,16.696,16.696v50.087h50.087c9.22,0,16.696,7.473,16.696,16.696C339.478,265.22,332.003,272.696,322.783,272.696z" /> </g> </g> <g> <g> <path d="M338.622,11.415C336.342,4.573,329.993,0,322.783,0H189.217c-7.21,0-13.559,4.573-15.84,11.415l-18.456,60.932h202.158 L338.622,11.415z"/> </ g> </g> <g> <g> <path d="M154.923,439.652l18.454,60.93c2.281,6.842,8.629,11.418,15.84,11.418h133.565c7.21,0,13.559-4.578,15.84-11.418 l18.454-60.93H154.923z"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+    <span>{{ cat.countyear }} hour in year</span>
+    </h6>
+  </div>
+  {% endfor %} 
+</div>
+
+
+<h2 class="">this month
+  <!-- loop in day[1,2,4] -->
+  {% for day in days %}
+  <span class="day" style="padding: 11px;border-radius: 1rem; display:inline-block; background:#ffc107">
+    {{ day}},
+    <!-- if day -->
+  </span>
+  {% endfor %}
+  days
+</h2>
+
+<style>
+  .carrds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 42px;
+    justify-content: center;
+  }
+  .carrd {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    gap: 8px;
+    border-radius:44px ;
+    box-shadow: 0 0 11px 22px rgba(0, 123, 255, 0.25);
+  }
+  
+  .carrd img{
+    width: 211px;
+    height: 211px;
+    box-shadow: 0 0 77px 22px rgba(0, 123, 255, 0.25);
+    border-radius:44px 15px 25px 44px;
+    border: #fff solid 5px;
+  }
+</style>
+
+
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+  {% for data in month %}
+  <div class="card img-thumbnail img-fluid shadow"
+    style="    background: #ffffffd4; border-radius: 22px; box-shadow: 1px 1px 21px #21252969;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <i class="fas fa-dumbbell" style="background: #078fff71;"></i> {{ data.exercisename }}
+      </h5>
+      <p class="card-text">
+        <i class="fas fa-clock" style="background: #0741ff6c;"></i>
+        {{ data.hour }}:{{ data.min }}
+      </p>
+      <p class="card-text">
+        <i class="fa fa-calendar-check" style="background: #ffc10770;"></i>
+        {{ data.date_Posted|date:"M d, Y" }}
+      </p>
+      {{ data.get_date_Posted }}
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+<h2 class="">this your
+  <!-- loop in day[1,2,4] -->
+  {% for day in years %}
+  <span class="day" style="padding: 11px;border-radius: 1rem; display:inline-block; background:#ffc107">
+    {{ day}},
+    <!-- if day -->
+  </span>
+  {% endfor %}
+  months
+</h2>
+
+<h2 class="shadow-lg p-2 rounded-pill " style="background:#ffc107">
+  <p style="
+  background: antiquewhite;
+  width: fit-content;
+  padding: 4px 25px;
+  border-radius: 36px;
+">top months exercise</p>
+  <div style="
+  background: antiquewhite;
+  width: fit-content;
+  padding: 4px 25px;
+  border-radius: 36px;
+">
+  {% for key, value in YM %}
+  <span class="day" style="padding: 11px;border-radius: 1rem; display:inline-block; background:#ffe9a6">
+    <p class="m-0" style="font-size:15px; text-align: center;">{{ key }} month</p>  
+    <p class="m-0" style="font-size:35px; font-weight: 700; text-align: center; ">{{ value }} days</p>
+    <!-- if day -->
+  </span>
+  {% endfor %}
+</div>
+</h2>
+
+
+<h2 style="background: #ffc10738;padding: 2px 19px;border-radius: 19px;box-shadow: 0 0 125px;color: #198754;"> ALL exercises</h2>
+
+
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+  {% for data in year %}
+  <div class="card img-thumbnail img-fluid shadow"
+    style=" background: #ffffffd4; border-radius: 22px; box-shadow: 1px 1px 21px #21252969;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <i class="fas fa-dumbbell" style="background: #078fff71;"></i> {{ data.exercisename }}
+      </h5>
+      <p class="card-text">
+        <i class="fas fa-clock" style="background: #0741ff6c;"></i>
+        {{ data.hour }}:{{ data.min }}
+      </p>
+      <p class="card-text">
+        <i class="fa fa-calendar-check" style="background: #ffc10770;"></i>
+        {{ data.date_Posted|date:"M d, Y" }}
+      </p>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+<!-- 
+
+
+    <h1 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
+    {% for Post in Posts %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ Post.author.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'user-Posts' Post.author.username %}">{{ Post.author }}</a>
+              <small class="text-muted">{{ Post.date_Posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'Post-detail' Post.id %}">{{ Post.exercisename }}</a></h2>
+            <p class="article-content">{{ Post.content }}</p>
+          </div>
+        </article>
+    {% endfor %} -->
+    {% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<style>
+  .card-body .fa,
+  .card-body .fas {
+    border-radius: 1rem;
+    padding: 8px;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+</style>
+
+<h2 class="text-light">this month
+  <!-- loop in day[1,2,4] -->
+  {% for day in days %}
+  <span class="day" style="padding: 11px;border-radius: 1rem; display:inline-block; background:#ffc107">
+    {{ day}},
+    <!-- if day -->
+  </span>
+  {% endfor %}
+  days
+</h2>
+
+
+
+
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+  {% for data in month %}
+  <div class="card img-thumbnail img-fluid shadow"
+    style="    background: #ffffffd4; border-radius: 22px; box-shadow: 1px 1px 21px #21252969;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <i class="fas fa-dumbbell" style="background: #078fff71;"></i> {{ data.exercisename }}
+      </h5>
+      <p class="card-text">
+        <i class="fas fa-clock" style="background: #0741ff6c;"></i>
+        {{ data.hour }}:{{ data.min }}
+      </p>
+      <p class="card-text">
+        <i class="fa fa-calendar-check" style="background: #ffc10770;"></i>
+        {{ data.date_Posted|date:"M d, Y" }}
+      </p>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+ 
+
+ 
+
+{% endblock content %}

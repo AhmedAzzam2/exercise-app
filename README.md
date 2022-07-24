@@ -51,9 +51,9 @@ month period (the current month for the current year).</li>
    In your web browser enter the address : http://localhost:8000 or http://127.0.0.1:8000/
 
 # Working:
-<img src="Screenshot/1.png" >
+<img src="https://raw.githubusercontent.com/AhmedAzzam2/exercise-app/main/screenshot/1.png" >
 
 # Screenshots : 
-<img src="Screenshot/2.png"  >
-<img src="Screenshot/3.png"  >
+<img src="https://raw.githubusercontent.com/AhmedAzzam2/exercise-app/main/screenshot/2.png"  >
+<img src="https://raw.githubusercontent.com/AhmedAzzam2/exercise-app/main/screenshot/3.png"  >
 
